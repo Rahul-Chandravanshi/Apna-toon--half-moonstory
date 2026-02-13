@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आधा चाँद वाला डिब्बा</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Gotu&family=Rozha+One&display=swap" rel="stylesheet">
+<style>
+    /* Custom Fonts */
+    .font-heading { font-family: 'Rozha One', serif; }
+    .font-body { font-family: 'Gotu', sans-serif; }
+    
+    /* Starry Background Animation */
+    .stars {
+        background-image: 
+            radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        animation: twinkle 5s infinite linear;
+    }
+    
+    @keyframes twinkle {
+        0% { opacity: 0.5; transform: translateY(0); }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; transform: translateY(-20px); }
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s ease;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Box Glow */
+    .box-glow {
+        box-shadow: 0 0 50px rgba(253, 224, 71, 0.3);
+    }
+</style>
+</head>
+<body class="bg-slate-900 text-slate-200 font-body overflow-x-hidden relative">
+
+    <!-- Starry Background Layer -->
+    <div class="fixed inset-0 stars z-0 pointer-events-none"></div>
+
+    <!-- Progress Bar -->
+    <div id="progress" class="fixed top-0 left-0 h-1 bg-yellow-400 z-50 transition-all duration-300 w-0"></div>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col items-center justify-center p-6 relative z-10">
+        <!-- Image Container -->
+        <div class="mb-8 relative group reveal active">
+            <div class="absolute -inset-1 bg-gradient-to-r from-yellow-600 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <!-- NOTE: Replace the src below with your actual image link if hosting online -->
+            <!-- Using a placeholder related to the prompt for now -->
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1000&auto=format&fit=crop" 
+                 alt="Magic Box" 
+                 class="relative rounded-lg shadow-2xl w-full max-w-md border-2 border-slate-700 object-cover h-64 md:h-80 grayscale hover:grayscale-0 transition-all duration-700">
+             <div class="absolute bottom-4 right-4 bg-black/50 px-2 py-1 rounded text-xs text-white/70">Image Placeholder</div>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-heading text-yellow-100 text-center leading-tight drop-shadow-lg reveal active delay-200">
+            आधा चाँद<br/>
+            <span class="text-yellow-400">वाला डिब्बा</span>
+        </h1>
+        <p class="mt-6 text-slate-400 text-lg reveal active delay-500">एक कहानी जो आपके दुख को आधा कर देगी...</p>
+        
+        <div class="mt-12 animate-bounce text-slate-500">
+            ↓
+        </div>
+    </header>
+
+    <!-- Story Container -->
+    <main class="max-w-2xl mx-auto px-6 pb-24 relative z-10 space-y-24">
+
+        <!-- Part 1 -->
+        <section class="reveal space-y-6 text-center">
+            <div class="inline-block p-3 rounded-full bg-slate-800 border border-slate-700 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <p class="text-xl leading-relaxed text-slate-300">
+                अपनापुरी की पुरानी लाइब्रेरी के कोने में एक लकड़ी का छोटा डिब्बा रखा था। धूल से ढका, ताला टूटा हुआ… पर किसी ने कभी खोला नहीं।
+            </p>
+            <p class="text-lg text-slate-400">
+                बच्चों में अफ़वाह थी — <br/>
+                <span class="text-yellow-200 font-bold">"उसमें आधा चाँद बंद है।"</span>
+            </p>
+        </section>
+
+        <!-- Part 2 -->
+        <section class="reveal bg-slate-800/50 p-8 rounded-2xl border-l-4 border-purple-500 backdrop-blur-sm">
+            <p class="text-lg leading-relaxed italic text-slate-300">
+                पिंकी को अफ़वाहों पर भरोसा नहीं था। एक शाम, उसने चुपके से डिब्बा खोला।
+                <br/><br/>
+                अंदर… चाँद नहीं था। एक मुड़ा हुआ कागज़ था।
+            </p>
+            <div class="mt-6 bg-yellow-100/10 p-4 rounded text-center">
+                <p class="font-heading text-xl text-yellow-200">
+                    “जिसे लगे कि वो अकेला है —<br/>यहाँ अपना दुख छोड़ जाना।<br/>अगला बच्चा उसे आधा कर देगा।”
+                </p>
+            </div>
+        </section>
+
+        <!-- Part 3 -->
+        <section class="reveal space-y-6 text-center">
+            <p class="text-xl text-slate-300">
+                पिंकी ने सोचा, "दुख आधा कैसे होता है?"
+            </p>
+            <p class="text-lg text-slate-400">
+                तभी उसे याद आया — आज स्कूल में उसकी सबसे अच्छी दोस्त उससे बात किए बिना चली गई थी।
+                उसने कागज़ पलटा। पीछे कई वाक्य लिखे थे:
+            </p>
+            <ul class="text-left max-w-sm mx-auto space-y-2 text-slate-400 list-disc pl-5">
+                <li>“मम्मी-पापा लड़ते हैं।”</li>
+                <li>“मुझे पढ़ाई से डर लगता है।”</li>
+                <li>“मेरा कोई दोस्त नहीं।”</li>
+            </ul>
+            <p class="text-lg text-slate-300 mt-4">
+                पिंकी का गला भर आया। उसे लगा — उसका दुख अब अकेला नहीं है।
+            </p>
+        </section>
+
+        <!-- Interactive Box Section -->
+        <section class="reveal pt-12">
+            <div class="bg-gradient-to-b from-slate-800 to-slate-900 rounded-3xl p-1 shadow-2xl box-glow">
+                <div class="bg-slate-900 rounded-[22px] p-8 text-center relative overflow-hidden">
+                    
+                    <!-- Moon Visual -->
+                    <div id="moon-visual" class="absolute top-0 right-0 p-4 transition-all duration-1000 opacity-50">
+                        <!-- Half Moon SVG -->
+                        <svg width="60" height="60" viewBox="0 0 100 100" class="fill-yellow-200 drop-shadow-[0_0_10px_rgba(255,255,0,0.5)]">
+                            <path id="moon-path" d="M50 0 A50 50 0 1 0 50 100 A25 50 0 1 1 50 0 Z" /> 
+                        </svg>
+                    </div>
+
+                    <h2 class="font-heading text-3xl text-yellow-100 mb-6">अब आपकी बारी है</h2>
+                    
+                    <!-- Step 1: The Box -->
+                    <div id="step-box" class="cursor-pointer transition-transform hover:scale-105 active:scale-95 py-8">
+                        <div class="w-32 h-24 mx-auto bg-yellow-900/40 border-2 border-yellow-700 rounded-lg flex items-center justify-center relative">
+                            <span class="text-yellow-500 text-sm tracking-widest uppercase">डिब्बा खोलें</span>
+                            <div class="absolute -top-4 w-36 h-4 bg-yellow-800 border border-yellow-700 rounded-t shadow-lg transition-all duration-500 origin-bottom" id="box-lid"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Input Area (Hidden) -->
+                    <div id="step-input" class="hidden space-y-4">
+                        <p class="text-slate-400 text-sm">अपना कोई भी दुख या डर यहाँ लिखें...</p>
+                        <textarea id="sorrow-text" class="w-full bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-3 focus:outline-none focus:border-yellow-500 h-24 resize-none placeholder-slate-600" placeholder="आज मेरा मन उदास है क्योंकि..."></textarea>
+                        <button id="submit-btn" class="bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-2 px-6 rounded-full transition-all w-full md:w-auto">
+                            डिब्बे में डालें ✨
+                        </button>
+                    </div>
+
+                    <!-- Step 3: Result (Hidden) -->
+                    <div id="step-result" class="hidden py-6 space-y-4">
+                        <p class="text-yellow-300 font-heading text-xl animate-pulse">
+                            "पिंकी की तरह, आप भी अकेले नहीं हैं।"
+                        </p>
+                        <p class="text-slate-400">
+                            देखो, तुम्हारा आधा चाँद अब पूरा होने लगा है।<br>
+                            दुख बाँटने से सच में आधा हो जाता है।
+                        </p>
+                        <button onclick="location.reload()" class="mt-4 text-xs text-slate-500 hover:text-white underline">शुरुआत से पढ़ें</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="reveal text-center space-y-6 pt-8">
+            <p class="text-xl font-heading text-yellow-100">
+                उस दिन के बाद, डिब्बा कभी खाली नहीं रहा।
+            </p>
+            <p class="text-lg text-slate-400">
+                और अपनापुरी में कोई बच्चा पूरी तरह अकेला भी नहीं रहा।
+            </p>
+            <div class="flex justify-center mt-4">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-yellow-200 animate-pulse"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 bg-slate-950 text-slate-600 text-xs border-t border-slate-900 relative z-10">
+        <p>© 2024 Story Experience | Apna Toon Blog</p>
+    </footer>
+
+    <!-- Script for Logic -->
+    <script>
+        // 1. Scroll Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const scrollReveal = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add("active");
+                }
+            });
+
+            // Progress Bar
+            const totalScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (totalScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        };
+
+        window.addEventListener("scroll", scrollReveal);
+
+        // 2. Box Interaction Logic
+        const stepBox = document.getElementById('step-box');
+        const boxLid = document.getElementById('box-lid');
+        const stepInput = document.getElementById('step-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const sorrowText = document.getElementById('sorrow-text');
+        const stepResult = document.getElementById('step-result');
+        const moonVisual = document.getElementById('moon-visual');
+        const moonPath = document.getElementById('moon-path');
+
+        // Open Box
+        stepBox.addEventListener('click', () => {
+            boxLid.style.transform = "rotateX(180deg)"; // Open lid
+            setTimeout(() => {
+                stepBox.style.display = 'none';
+                stepInput.classList.remove('hidden');
+                stepInput.classList.add('fade-in'); // You can add CSS animation for this
+            }, 600);
+        });
+
+        // Submit Sorrow
+        submitBtn.addEventListener('click', () => {
+            if(sorrowText.value.trim() === "") {
+                alert("कृपया पहले कुछ लिखें...");
+                return;
+            }
+
+            // Animate transition
+            stepInput.style.opacity = '0';
+            stepInput.style.transition = 'opacity 0.5s';
+            
+            setTimeout(() => {
+                stepInput.classList.add('hidden');
+                stepResult.classList.remove('hidden');
+                stepResult.classList.add('block');
+                
+                // Animate Moon to Full
+                moonVisual.style.opacity = '1';
+                moonVisual.style.transform = 'scale(1.5)';
+                // Change path to full circle
+                moonPath.setAttribute('d', 'M50 0 A50 50 0 1 0 50 100 A50 50 0 1 1 50 0 Z');
+                // Make it glow more
+                moonVisual.style.filter = "drop-shadow(0 0 20px rgba(253, 224, 71, 0.8))";
+            }, 500);
+        });
+
+    </script>
+</body>
+</html>
+  
